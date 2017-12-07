@@ -34,32 +34,33 @@ The goals / steps of this project are the following:
 ---
 ## Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+### Data Set Summary & Exploration
 
-###Data Set Summary & Exploration
+#### 1. Basic Summary of Data Set
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-I used the pandas library to calculate summary statistics of the traffic
+The numpy library were used to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799
+* The size of the validation set is 12630
+* The size of test set is 4410
+* The shape of a traffic sign image is (32,32,3)
+* The number of unique classes/labels in the data set is 43
 
-####2. Include an exploratory visualization of the dataset.
+The number of unique classes/labels requires an explanation. This number signifies that we have a total of 43 different possible traffic signs in the given dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+#### 2. Exploratory visualization of the dataset.
 
-![alt text][image1]
+I proceeded to perform some basic exploration of the data. I printed out the various traffic sign names. It can be seen in my ipython notebook that i have a small function to do this.
 
-###Design and Test a Model Architecture
+I then proceeded to plot a histogram of the various training set traffic signs.
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+Finally i choose 20 random images from the training set to output the images using matplotlib.
+
+### Design and Test a Model Architecture
+
+#### 1. Image Preprocessing
 
 As a first step, I decided to convert the images to grayscale because ...
 
@@ -80,7 +81,7 @@ Here is an example of an original image and an augmented image:
 The difference between the original data set and the augmented data set is the following ... 
 
 
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
@@ -165,7 +166,6 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 For the second image ... 
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
 
 
