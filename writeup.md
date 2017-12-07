@@ -259,7 +259,7 @@ For the first image, the model predicts Speed limit of 30km/h but the actual sig
 | 4.12792529e-21		| Speed limit (120km/h) 						|
 
 
-For the second image, the model predicts Speed limit of 70km/h an the actual sign is 70 km/h
+For the second image, the model predicts Speed limit of 70km/h and the actual sign is indeed 70 km/h
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -292,7 +292,7 @@ For the fourth image, the model predicts road work and this is indeed the case.
 | 3.84299653e-15		| Priority road					 				|
 
 
-For the fifth image, the model predicts Speed limit of 30km/h an the actual sign is 30 km/h
+For the fifth image, the model predicts Speed limit of 30km/h and the actual sign is indeed 30 km/h
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
