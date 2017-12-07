@@ -16,14 +16,26 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./test_images/test_image_01_sign_1.jpg "Traffic Sign 1"
+[image2]: ./test_images/test_image_02_sign_13.jpg "Traffic Sign 2"
+[image3]: ./test_images/test_image_03_sign_25.jpg "Traffic Sign 3"
+[image4]: ./test_images/test_image_04_sign_14.jpg "Traffic Sign 4"
+[image5]: ./test_images/test_image_05_sign_1.jpg "Traffic Sign 5"
+[image6]: ./test_images/test_image_06_sign_1.jpg "Traffic Sign 6"
+[image7]: ./test_images/test_image_07_sign_28.jpg "Traffic Sign 7"
+[image8]: ./test_images/test_image_08_sign_2.jpg "Traffic Sign 8"
+[image9]: ./test_images/test_image_09_sign_4.jpg "Traffic Sign 9"
+[image10]: ./test_images/test_image_10_sign_4.jpg "Traffic Sign 10"
+[image11]: ./test_images/test_image_11_sign_7.jpg "Traffic Sign 11"
+[image12]: ./test_images/test_image_12_sign_5.jpg "Traffic Sign 12"
+[image13]: ./test_images/test_image_13_sign_8.jpg "Traffic Sign 13"
+[image14]: ./test_images/test_image_14_sign_3.jpg "Traffic Sign 14"
+[image15]: ./test_images/test_image_15_sign_0.jpg "Traffic Sign 15"
+[image16]: ./test_images/test_image_16_sign_39.jpg "Traffic Sign 16"
+[image17]: ./test_images/test_image_17_sign_38.jpg "Traffic Sign 17"
+[image18]: ./test_images/test_image_18_sign_9.jpg "Traffic Sign 18"
+[image19]: ./test_images/test_image_19_sign_28.jpg "Traffic Sign 19"
+[image20]: ./test_images/test_image_20_sign_14.jpg "Traffic Sign 20"
 
 
 
@@ -149,8 +161,13 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image1] ![alt text][image2] ![alt text][image3] 
+![alt text][image4] ![alt text][image5] ![alt text][image6]
+![alt text][image7] ![alt text][image8] ![alt text][image9] 
+![alt text][image10] ![alt text][image11] ![alt text][image12]
+![alt text][image13] ![alt text][image14] ![alt text][image15]
+![alt text][image16] ![alt text][image17] ![alt text][image18] 
+![alt text][image19] ![alt text][image20]
 
 The first image might be difficult to classify because ...
 
