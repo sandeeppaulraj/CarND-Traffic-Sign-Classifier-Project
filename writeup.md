@@ -135,12 +135,21 @@ I performed training on an Amazaon EC2 GPU instance.
 
 #### 4. Solution Approach
 
-I first started of with the Lenet architecture itself.
+I first started of with the Lenet architecture itself that was suggested in the lab.
+With this, i could not achieve a validation set accuracy of even 0.9.I tried various dropout layers but that too did not increase my validation accuracy.
+
+Having modelled a few other CNNs before in other projects, one particular direction which has helped me a lot is starting of with an initial filer size of 32 in the first convolution layer and then progressively increasing it by a power of 2. So the filter size for each convolution layer will be 32,64,128,etc. Along these lines, i experimented with various filter sizes and started seeing an immediate improvement. I finally settled for 3 convolution layers with filter sizes of 64,128 and 256.
+The three convolution layers are all followed by a RELU activation layers followed by a MAX Pooling layer.This can be seen in my CNN model architecture. With this i went above the 0.93 threshold that was required for submission. I continued using 3 fully connected layers as well. Adding a fourth convolution layer did not help my validation accuracy. Surprisingly, even adding dropout layers did not help my model. Essentially i settled for three convolution layers and three fully connected layers
+
 
 My final model results were:
 * training set accuracy of 1.000
 * validation set accuracy of 0.954
-* test set accuracy of 0.963
+* test set accuracy of 0.962
+
+All my trial runs were based on just gauging the validation set accuracy. I was satisfied with my validation set accuracy of 0.954 and pleasantly surprised with a test set accuracy of 0.962
+
+
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -157,9 +166,9 @@ If a well known architecture was chosen:
 
 ### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Random German Traffic Signs from the internet
 
-Here are five German traffic signs that I found on the web:
+I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects i test on more datathan the prerequisite number of tests required in the project. In this case, i thought "five" was a low number and decided to test on 20 different images.
 
 ![alt text][image1]
 
@@ -201,7 +210,6 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text][image20]
 
-The first image might be difficult to classify because ...
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
