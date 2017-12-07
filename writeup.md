@@ -248,7 +248,7 @@ I am surprised that the 3 differences are with images that represent a speed. An
 
 I will choose to discuss 5 test images instead of all the 20 images. 
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model predicts Speed limit of 30km/h but the actual sign is 50 km/h
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -259,7 +259,7 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 | 4.12792529e-21		| Speed limit (120km/h) 						|
 
 
-For the second image ...
+For the second image, the model predicts Speed limit of 70km/h an the actual sign is 70 km/h
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -270,7 +270,7 @@ For the second image ...
 | 3.58023253e-32		| Stop 											|
 
 
-For the third image ...
+For the third image, the model predicts Speed limit of 60km/h but the actual sign is 20 km/h
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -281,7 +281,7 @@ For the third image ...
 | 4.34783676e-12		| Stop 											|
 
 
-For the fourth image ...
+For the fourth image, the model predicts road work and this is indeed the case.
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -292,7 +292,7 @@ For the fourth image ...
 | 3.84299653e-15		| Priority road					 				|
 
 
-For the fifth image ...
+For the fifth image, the model predicts Speed limit of 30km/h an the actual sign is 30 km/h
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
