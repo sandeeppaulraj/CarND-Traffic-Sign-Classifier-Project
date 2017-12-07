@@ -237,19 +237,19 @@ Here are the results of the prediction:
 | Speed limit (30km/h)	| Speed limit (30km/h) 							|
 | Speed limit (30km/h)	| Speed limit (30km/h) 							|
 | Children crossing		| Children crossing								|
-| Speed limit (50km/h)	| Road work										|
-| Speed limit (70km/h)	| Road work										|
-| Speed limit (70km/h)	| Road work										|
-| Speed limit (100km/h)	| Road work										|
-| Speed limit (80km/h)	| Road work										|
-| Speed limit (120km/h)	| Road work										|
-| Speed limit (60km/h)	| Road work										|
-| Speed limit (20km/h)	| Road work										|
-| Keep left				| Road work										|
-| Keep Right			| Road work										|
-| No passing			| Road work										|
-| Children crossing		| Road work										|
-| Stop					| Road work										|
+| Speed limit (50km/h)	| Speed limit (30km/h)							|
+| Speed limit (70km/h)	| Speed limit (70km/h)							|
+| Speed limit (70km/h)	| Speed limit (70km/h)							|
+| Speed limit (100km/h)	| Speed limit (100km/h)							|
+| Speed limit (80km/h)	| Speed limit (30km/h)							|
+| Speed limit (120km/h)	| Speed limit (120km/h)							|
+| Speed limit (60km/h)	| Speed limit (60km/h)							|
+| Speed limit (20km/h)	| Speed limit (60km/h)							|
+| Keep left				| Keep left										|
+| Keep Right			| Keep Right									|
+| No passing			| No passing									|
+| Children crossing		| Children crossing								|
+| Stop					| Stop											|
 
 
 The model was able to correctly guess 17 of the 20 traffic signs, which gives an accuracy of 85%. This is below my test set accuracy of 96.2%.
