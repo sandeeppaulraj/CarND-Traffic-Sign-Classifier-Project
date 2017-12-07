@@ -136,10 +136,12 @@ I performed training on an Amazaon EC2 GPU instance.
 #### 4. Solution Approach
 
 I first started of with the Lenet architecture itself that was suggested in the lab.
+LeNet is a great starting point since it has already been extensively used even on grayscale MNIST data
 With this, i could not achieve a validation set accuracy of even 0.9.I tried various dropout layers but that too did not increase my validation accuracy.
 
 Having modelled a few other CNNs before in other projects, one particular direction which has helped me a lot is starting of with an initial filer size of 32 in the first convolution layer and then progressively increasing it by a power of 2. So the filter size for each convolution layer will be 32,64,128,etc. Along these lines, i experimented with various filter sizes and started seeing an immediate improvement. I finally settled for 3 convolution layers with filter sizes of 64,128 and 256.
-The three convolution layers are all followed by a RELU activation layers followed by a MAX Pooling layer.This can be seen in my CNN model architecture. With this i went above the 0.93 threshold that was required for submission. I continued using 3 fully connected layers as well. Adding a fourth convolution layer did not help my validation accuracy. Surprisingly, even adding dropout layers did not help my model. Essentially i settled for three convolution layers and three fully connected layers
+The three convolution layers are all followed by a RELU activation layers followed by a MAX Pooling layer.This can be seen in my CNN model architecture. With this i went above the 0.93 threshold that was required for submission. I continued using 3 fully connected layers as well. Adding a fourth convolution layer did not help my validation accuracy. Surprisingly, even adding dropout layers did not help my model. Essentially i settled for three convolution layers and three fully connected layers.
+Progressively increasing the filter size makes the network deeper and will help in extracting important features.
 
 
 My final model results were:
@@ -148,27 +150,16 @@ My final model results were:
 * test set accuracy of 0.962
 
 All my trial runs were based on just gauging the validation set accuracy. I was satisfied with my validation set accuracy of 0.954 and pleasantly surprised with a test set accuracy of 0.962
+Before starting this journey, i set myself a personal target of 0.95 for the validation set accuracy, so i was very satisfied to go a little better. 
 
+Some other things that i should have tried are trying to use "same" padding and also modifying the various kernel size parameters in the various layers.
 
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
 ### Test a Model on New Images
 
 #### 1. Random German Traffic Signs from the internet
 
-I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects i test on more datathan the prerequisite number of tests required in the project. In this case, i thought "five" was a low number and decided to test on 20 different images.
+I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects i test on more datathan the prerequisite number of tests required in the project. In this case, i thought "five" was a low number and decided to test on 20 different images. I would also like to highlight the fact that one other reason to use 20 images was to have some "clear" images to gauge how well my model behaved with images from the internet. Some images do have watermarks and other which i will mention below.
 
 ![alt text][image1]
 
