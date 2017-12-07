@@ -62,26 +62,22 @@ Finally i choose 20 random images from the training set to output the images usi
 
 #### 1. Image Preprocessing
 
-As a first step, I decided to convert the images to grayscale because ...
+I initially tried to convert the images to grayscale but after trial and error i came to the conclusion that converting the images to grayscale did not really help my model performance. This came as a surprise.
 
-Here is an example of a traffic sign image before and after grayscaling.
+Next, i decided to normalize by subtracting each data point by 128 and dividing by 128.
+I did improve my model performance with this but while researching i came across another method which seemed to give me better performance. I use the mean and standard deviation and preprocess my data in the following way.
 
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+X_train = (X_train_pp - np.mean(X_train_pp))/np.std(X_train_pp)
+X_valid = (X_valid_pp - np.mean(X_valid_pp))/np.std(X_valid_pp)
+X_test  = (X_test_pp  - np.mean(X_test_pp))/np.std(X_test_pp)
 
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+I also came across keras preprocessing techniques where there are several preprocessing options available. I will probably try these out at some point of time.
+
+For my submission, i keep things simeple by just performing the normalization.
+
+
+####  2. Model Architecture
 
 My final model consisted of the following layers:
 
@@ -99,7 +95,7 @@ My final model consisted of the following layers:
  
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an ....
 
@@ -123,7 +119,7 @@ If a well known architecture was chosen:
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
-###Test a Model on New Images
+### Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
