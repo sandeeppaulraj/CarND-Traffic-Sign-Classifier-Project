@@ -1,8 +1,5 @@
 ## **Traffic Sign Recognition** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
@@ -28,8 +25,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+
 
 ---
 ## Writeup / README
@@ -68,7 +64,9 @@ Next, i decided to normalize by subtracting each data point by 128 and dividing 
 I did improve my model performance with this but while researching i came across another method which seemed to give me better performance. I use the mean and standard deviation and preprocess my data in the following way.
 
 X_train = (X_train_pp - np.mean(X_train_pp))/np.std(X_train_pp)
+
 X_valid = (X_valid_pp - np.mean(X_valid_pp))/np.std(X_valid_pp)
+
 X_test  = (X_test_pp  - np.mean(X_test_pp))/np.std(X_test_pp)
 
 
@@ -79,32 +77,58 @@ For my submission, i keep things simeple by just performing the normalization.
 
 ####  2. Model Architecture
 
+First i tried one run of my project using the default Lenet model. This can still be seen in the project notebook. After having gone through this process, i proceeded to have a model named TrafficNet.
+
 My final model consisted of the following layers:
+I used the the same mu and sigma as was suggested in the LeNet model in example lab.
+
+I leveraged 3 convolution layers and 3 fully connected layers in my model.
+One thing i notice much to my surprise was when i used dropout, i didn't get any improvement.
+Some of the remnants can still be seen in the code.
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x64 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
+| Max pooling	      	| 2x2 stride, valid padding, outputs 14x14x64	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 10x10x128 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride, valid padding, outputs 5x5x128	|
+| Convolution 3x3     	| 1x1 stride, valid padding, outputs 3x3x256 	|
+| RELU					|												|
+| Max pooling	      	| 1x1 stride, valid padding, outputs 2x2x256	|
+| Flatten				| 1024 outputs									|
+| Fully connected		| 1024 inputs 120 outputs						|
+| RELU					|												|
+| Fully connected		| 120  inputs  84 outputs						|
+| RELU					|												|
+| Fully connected		| 84   inputs  43 outputs						|
+| Softmax				| Softmax Cross Entropy with Logits 			|
 |						|												|
 |						|												|
  
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Model Training
 
-To train the model, I used an ....
+To train the model i used a batch size of 128 and i used 50 epochs.
+I used the AdamOptimzer with a learning rate of 0.001
+As mentioned previously i used a mean of 0 and standard deviation of 0.1 for training.
+I perform one hot encoding with number of classes equal to 43. The number of 43 is important since this is the number of different traffic signs in the training data set.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+A close look at the various individual code cells will show that i essentially leveraged the variosu code cells from the LeNet lab.
+
+I performed training on an Amazaon EC2 GPU instance. 
+
+#### 4. Solution Approach
+
+I first started of with the Lenet architecture itself.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 1.000
+* validation set accuracy of 0.954
+* test set accuracy of 0.963
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
