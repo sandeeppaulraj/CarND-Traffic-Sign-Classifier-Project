@@ -3,17 +3,6 @@
 
 ---
 
-**Build a Traffic Sign Recognition Project**
-
-The goals / steps of this project are the following:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
-* Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
-
-
 [//]: # (Image References)
 
 [image1]: ./test_images/test_image_01_sign_1.jpg "Traffic Sign 1"
@@ -47,8 +36,7 @@ The goals / steps of this project are the following:
 
 #### 1. Basic Summary of Data Set
 
-The numpy library were used to calculate summary statistics of the traffic
-signs data set:
+The numpy library were used to calculate summary statistics of the traffic signs data set:
 
 * The size of training set is 34799
 * The size of the validation set is 12630
@@ -64,16 +52,16 @@ I proceeded to perform some basic exploration of the data. I printed out the var
 
 I then proceeded to plot a histogram of the various training set traffic signs.
 
-Finally i choose 20 random images from the training set to output the images using matplotlib.
+Finally i chose 20 random images from the training set to output the images using matplotlib.
 
 ### Design and Test a Model Architecture
 
 #### 1. Image Preprocessing
 
-I initially tried to convert the images to grayscale but after trial and error i came to the conclusion that converting the images to grayscale did not really help my model performance. This came as a surprise.
+I initially tried to convert the images to grayscale but after trial and error I came to the conclusion that converting the images to grayscale did not really help my model performance. This came as a surprise.
 
 Next, i decided to normalize by subtracting each data point by 128 and dividing by 128.
-I did improve my model performance with this but while researching i came across another method which seemed to give me better performance. I use the mean and standard deviation and preprocess my data in the following way.
+I did improve my model performance with this but while researching I came across another method which seemed to give me better performance. I use the mean and standard deviation and preprocess my data in the following way.
 
 X_train = (X_train_pp - np.mean(X_train_pp))/np.std(X_train_pp)
 
@@ -84,18 +72,18 @@ X_test  = (X_test_pp  - np.mean(X_test_pp))/np.std(X_test_pp)
 
 I also came across keras preprocessing techniques where there are several preprocessing options available. I will probably try these out at some point of time.
 
-For my submission, i keep things simeple by just performing the normalization.
+For my submission, i keep things simple by just performing the normalization.
 
 
 ####  2. Model Architecture
 
-First i tried one run of my project using the default Lenet model. This can still be seen in the project notebook. After having gone through this process, i proceeded to have a model named TrafficNet.
+First i tried one run of my project using the default Lenet model. This can still be seen in the project notebook. After having gone through this process, i proceeded to make changes/updates and named my model TrafficNet.
 
 My final model consisted of the following layers:
 I used the the same mu and sigma as was suggested in the LeNet model in example lab.
 
 I leveraged 3 convolution layers and 3 fully connected layers in my model.
-One thing i notice much to my surprise was when i used dropout, i didn't get any improvement.
+One thing I noticed much to my surprise was when i used dropout, i didn't get any improvement.
 Some of the remnants can still be seen in the code.
 
 | Layer         		|     Description	        					| 
@@ -124,12 +112,12 @@ Some of the remnants can still be seen in the code.
 
 #### 3. Model Training
 
-To train the model i used a batch size of 128 and i used 50 epochs.
+To train the model I used a batch size of 128 and I used 50 epochs.
 I used the AdamOptimzer with a learning rate of 0.001
-As mentioned previously i used a mean of 0 and standard deviation of 0.1 for training.
+As mentioned previously I used a mean of 0 and standard deviation of 0.1 for training.
 I perform one hot encoding with number of classes equal to 43. The number of 43 is important since this is the number of different traffic signs in the training data set.
 
-A close look at the various individual code cells will show that i essentially leveraged the variosu code cells from the LeNet lab.
+A close look at the various individual code cells will show that I essentially leveraged the various code cells from the LeNet lab.
 
 I performed training on an Amazaon EC2 GPU instance. 
 
@@ -137,10 +125,10 @@ I performed training on an Amazaon EC2 GPU instance.
 
 I first started of with the Lenet architecture itself that was suggested in the lab.
 LeNet is a great starting point since it has already been extensively used even on grayscale MNIST data
-With this, i could not achieve a validation set accuracy of even 0.9.I tried various dropout layers but that too did not increase my validation accuracy.
+However, with this, i could not achieve a validation set accuracy of even 0.9.I tried various dropout layers but that too did not increase my validation accuracy.
 
-Having modelled a few other CNNs before in other projects, one particular direction which has helped me a lot is starting of with an initial filer size of 32 in the first convolution layer and then progressively increasing it by a power of 2. So the filter size for each convolution layer will be 32,64,128,etc. Along these lines, i experimented with various filter sizes and started seeing an immediate improvement. I finally settled for 3 convolution layers with filter sizes of 64,128 and 256.
-The three convolution layers are all followed by a RELU activation layers followed by a MAX Pooling layer.This can be seen in my CNN model architecture. With this i went above the 0.93 threshold that was required for submission. I continued using 3 fully connected layers as well. Adding a fourth convolution layer did not help my validation accuracy. Surprisingly, even adding dropout layers did not help my model. Essentially i settled for three convolution layers and three fully connected layers.
+Having modelled a few other CNNs before in other projects, one particular direction which has helped me a lot is starting of with an initial filter size of 32 in the first convolution layer and then progressively increasing it by a power of 2. So the filter size for each convolution layer will be 32,64,128,etc. Along these lines, I experimented with various filter sizes and started seeing an immediate improvement. I finally settled for 3 convolution layers with filter sizes of 64,128 and 256.
+The three convolution layers are all followed by a RELU activation layer followed by a MAX Pooling layer.This can be seen in my CNN model architecture. With this I went above the 0.93 threshold that was required for submission. I continued using 3 fully connected layers as well. Adding a fourth convolution layer did not help my validation accuracy. Surprisingly, even adding dropout layers did not help my model. Essentially i settled for three convolution layers and three fully connected layers.
 Progressively increasing the filter size makes the network deeper and will help in extracting important features.
 
 
@@ -159,13 +147,13 @@ Some other things that i should have tried are trying to use "same" padding and 
 
 #### 1. Random German Traffic Signs from the internet
 
-I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects i test on more data than the prerequisite number of tests required in the project. In this case, i thought "five" was a low number and decided to test on twenty different images. I would also like to highlight the fact that one other reason to use twenty images was to have some "clear" images to gauge how well my model behaved with images from the internet. Some images do have watermarks and other issues which i will mention below.
+I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects I test on more data than the prerequisite number of tests required in the project. In this case, I thought "five" was a low number and decided to test on twenty different images. I would also like to highlight the fact that one other reason to use twenty images was to have some "clear" images to gauge how well my model behaved with images from the internet. Some images do have watermarks and other issues which I will mention below.
 
 The issue with the below image is that is has several poles around the sign so this could possibly cause issues
 
 ![alt text][image1]
 
-In the below image, the traffic sign is actually above anotehr sign although the sign below is truncated to a very large extent.
+In the below image, the traffic sign is actually above another sign although the sign below is truncated to a very large extent.
 
 ![alt text][image2]
 
@@ -258,6 +246,7 @@ I am surprised that the 3 differences are with images that represent a speed. An
 
 #### 3. Model Certainty - Softmax Probabilities
 
+I will choose to discuss 5 test images instead of all the 20 images
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
