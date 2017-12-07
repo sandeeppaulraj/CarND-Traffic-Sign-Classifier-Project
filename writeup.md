@@ -20,7 +20,7 @@ The goals / steps of this project are the following:
 [image2]: ./test_images/test_image_02_sign_13.jpg "Traffic Sign 2"
 [image3]: ./test_images/test_image_03_sign_25.jpg "Traffic Sign 3"
 [image4]: ./test_images/test_image_04_sign_14.jpg "Traffic Sign 4"
-[image5]: ./test_images/test_image_05_sign_1.jpg "Traffic Sign 5"
+[image5]: ./test_images/test_image_05_sign_1.JPG "Traffic Sign 5"
 [image6]: ./test_images/test_image_06_sign_1.jpg "Traffic Sign 6"
 [image7]: ./test_images/test_image_07_sign_28.jpg "Traffic Sign 7"
 [image8]: ./test_images/test_image_08_sign_2.jpg "Traffic Sign 8"
@@ -161,13 +161,45 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image1] ![alt text][image2] ![alt text][image3] 
-![alt text][image4] ![alt text][image5] ![alt text][image6]
-![alt text][image7] ![alt text][image8] ![alt text][image9] 
-![alt text][image10] ![alt text][image11] ![alt text][image12]
-![alt text][image13] ![alt text][image14] ![alt text][image15]
-![alt text][image16] ![alt text][image17] ![alt text][image18] 
-![alt text][image19] ![alt text][image20]
+![alt text][image1]
+
+![alt text][image2]
+
+![alt text][image3] 
+
+![alt text][image4]
+
+![alt text][image5]
+
+![alt text][image6]
+
+![alt text][image7]
+
+![alt text][image8]
+
+![alt text][image9] 
+
+![alt text][image10]
+
+![alt text][image11]
+
+![alt text][image12]
+
+![alt text][image13]
+
+![alt text][image14]
+
+![alt text][image15]
+
+![alt text][image16]
+
+![alt text][image17]
+
+![alt text][image18] 
+
+![alt text][image19]
+
+![alt text][image20]
 
 The first image might be difficult to classify because ...
 
