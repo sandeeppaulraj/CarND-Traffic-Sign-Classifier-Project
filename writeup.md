@@ -159,21 +159,38 @@ Some other things that i should have tried are trying to use "same" padding and 
 
 #### 1. Random German Traffic Signs from the internet
 
-I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects i test on more datathan the prerequisite number of tests required in the project. In this case, i thought "five" was a low number and decided to test on 20 different images. I would also like to highlight the fact that one other reason to use 20 images was to have some "clear" images to gauge how well my model behaved with images from the internet. Some images do have watermarks and other which i will mention below.
+I decided to test my model on 20 German traffic signs that i found on the internet using google images to be precise. For most of my projects i test on more data than the prerequisite number of tests required in the project. In this case, i thought "five" was a low number and decided to test on twenty different images. I would also like to highlight the fact that one other reason to use twenty images was to have some "clear" images to gauge how well my model behaved with images from the internet. Some images do have watermarks and other issues which i will mention below.
+
+The issue with the below image is that is has several poles around the sign so this could possibly cause issues
 
 ![alt text][image1]
 
+In the below image, the traffic sign is actually above anotehr sign although the sign below is truncated to a very large extent.
+
 ![alt text][image2]
 
-![alt text][image3] 
+The below image is a clear image with only scratches on the sign.
+
+![alt text][image3]
+
+In the below image, notice the blue stripe of another sign.
 
 ![alt text][image4]
 
+In the below image part of the sign is missing from the top.
+
 ![alt text][image5]
+
+The below image is a clear image
 
 ![alt text][image6]
 
+The image below has a watermark
+
 ![alt text][image7]
+
+
+The images below are very clear images.
 
 ![alt text][image8]
 
@@ -195,12 +212,17 @@ I decided to test my model on 20 German traffic signs that i found on the intern
 
 ![alt text][image17]
 
+Notice the Sun shining in the bottom right hand corner
+
 ![alt text][image18] 
+
+The image is different in the sense the left side has an image of a blue sky and the right side has a green tree.
 
 ![alt text][image19]
 
-![alt text][image20]
+The below image is a clear sign
 
+![alt text][image20]
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -208,14 +230,29 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Speed limit (30km/h)	| Speed limit (30km/h)							| 
+| Yield 				| Yield 										|
+| Road work				| Road work										|
+| Stop  				| Stop 							 				|
+| Speed limit (30km/h)	| Speed limit (30km/h) 							|
+| Speed limit (30km/h)	| Speed limit (30km/h) 							|
+| Children crossing		| Children crossing								|
+| Speed limit (50km/h)	| Road work										|
+| Speed limit (70km/h)	| Road work										|
+| Speed limit (70km/h)	| Road work										|
+| Speed limit (100km/h)	| Road work										|
+| Speed limit (80km/h)	| Road work										|
+| Speed limit (120km/h)	| Road work										|
+| Speed limit (60km/h)	| Road work										|
+| Speed limit (20km/h)	| Road work										|
+| Keep left				| Road work										|
+| Keep Right			| Road work										|
+| No passing			| Road work										|
+| Children crossing		| Road work										|
+| Stop					| Road work										|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 17 of the 20 traffic signs, which gives an accuracy of 85%. This is below my test set accuracy of 96.2%.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
