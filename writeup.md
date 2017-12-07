@@ -246,21 +246,58 @@ I am surprised that the 3 differences are with images that represent a speed. An
 
 #### 3. Model Certainty - Softmax Probabilities
 
-I will choose to discuss 5 test images instead of all the 20 images
+I will choose to discuss 5 test images instead of all the 20 images. 
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1 					| Stop sign   									| 
+| 7.52507255e-14		| U-turn 										|
+| 2.34635306e-17		| Yield											|
+| 2.17252112e-19		| Bumpy Road					 				|
+| 4.12792529e-21		| Slippery Road      							|
 
 
-For the second image ... 
+For the second image ...
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1 					| Stop sign   									| 
+| 2.45097623e-11		| U-turn 										|
+| 2.10769678e-19		| Yield											|
+| 7.02596885e-27		| Bumpy Road					 				|
+| 3.58023253e-32		| Slippery Road      							|
 
 
+For the third image ...
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1 					| Stop sign   									| 
+| 6.80272505e-09		| U-turn 										|
+| 1.19147109e-10		| Yield											|
+| 5.57566979e-11		| Bumpy Road					 				|
+| 4.34783676e-12		| Slippery Road      							|
 
 
+For the fourth image ...
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1 					| Stop sign   									| 
+| 1.21731280e-11		| U-turn 										|
+| 7.93273813e-13		| Yield											|
+| 6.87919163e-15		| Bumpy Road					 				|
+| 3.84299653e-15		| Slippery Road      							|
+
+
+For the fifth image ...
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1 					| Stop sign   									| 
+| 4.64747761e-13		| U-turn 										|
+| 1.36253408e-13		| Yield											|
+| 3.49214892e-18		| Bumpy Road					 				|
+| 1.46887163e-23		| Slippery Road      							|
